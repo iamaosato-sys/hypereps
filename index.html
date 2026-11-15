@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HypeReps — Free Calisthenics Progress Tracker</title>
+<meta name="description" content="HypeReps is a free bodyweight training tracker. Level up from wall push-ups to one-arm push-ups, squats to pistols, hangs to pull-ups — with a hype coach cheering every set.">
+<meta name="theme-color" content="#0f1020">
+<link rel="canonical" href="https://hypereps.vercel.app/">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<meta property="og:title" content="HypeReps — Free Calisthenics Progress Tracker">
+<meta property="og:description" content="Level up your bodyweight training. Free, no account, works offline.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hypereps.vercel.app/">
+<link rel="stylesheet" href="styles.css">
+<script>
+  // Google Analytics 4 Measurement ID. Leave blank to disable analytics entirely.
+  window.GA_ID = "";
+  // Google Search Console verification token (content value only). Leave blank if verifying another way.
+  window.GSC_TOKEN = "";
+</script>
+<script src="consent.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="brand"><img src="icon.svg" alt="" width="28" height="28"><span>Hype<b>Reps</b></span></div>
+  <nav aria-label="Main">
+    <button class="nav" data-view="today" aria-current="page">Today</button>
+    <button class="nav" data-view="progress">Progress</button>
+    <button class="nav" data-view="history">History</button>
+    <button class="nav" data-view="settings">Settings</button>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1"></main>
+
+<div id="hype" class="hype" role="status" aria-live="polite"></div>
+<div id="timer" class="timer" hidden></div>
+<div id="modal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle"></div>
+
+<footer class="foot">
+  <p>Free forever. No account. Your data stays on your device.</p>
+  <p><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="cookies.html">Cookies</a> · <button class="linkbtn" id="cookieSettings">Cookie settings</button></p>
+  <p class="small">HypeReps by Entwisle Fitness, Fylde Coast, Lancashire, UK. General fitness information, not medical advice.</p>
+</footer>
+
+<script src="app.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+  }
+</script>
+</body>
+</html>
